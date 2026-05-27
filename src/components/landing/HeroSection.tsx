@@ -1,5 +1,6 @@
 import { ArrowRight, Headphones, Rocket, TrendingUp, Users, Wrench } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import OfferScarcityNote from "@/components/landing/OfferScarcityNote";
 import PurchaseCtaButton from "@/components/landing/PurchaseCtaButton";
 import { landingConfig } from "@/config/landing";
 
@@ -48,7 +49,7 @@ const HeroSection = () => {
               co-produtores, e operar com previsibilidade de caixa.
             </p>
 
-            <div className="fade-in-up fade-in-up-delay-3 mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <div className="fade-in-up fade-in-up-delay-3 mt-8 flex flex-col items-start gap-3 sm:flex-row sm:items-center">
               <PurchaseCtaButton variant="hero" size="lg" className="w-full whitespace-normal sm:w-auto">
                 Quero o Getfy Gateway
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -61,6 +62,10 @@ const HeroSection = () => {
               >
                 <a href="#incluso-premium">Ver o que está incluso</a>
               </Button>
+            </div>
+
+            <div className="fade-in-up fade-in-up-delay-3 lg:hidden">
+              <OfferScarcityNote variant="dark" />
             </div>
 
             <ul className="fade-in-up fade-in-up-delay-4 mt-10 grid gap-2 sm:grid-cols-2 sm:gap-x-4 sm:gap-y-2">
@@ -79,10 +84,18 @@ const HeroSection = () => {
             <div className="ml-auto max-w-sm space-y-4">
               <div className="rounded-2xl border border-white/15 bg-slate-950/85 p-6 shadow-[0_24px_64px_-16px_rgba(0,0,0,0.65)] backdrop-blur-xl ring-1 ring-white/10">
                 <p className="text-xs font-semibold uppercase tracking-wider text-[#c2ee63]">Investimento</p>
-                <p className="mt-2 text-4xl font-extrabold tracking-tight text-white">
+                {landingConfig.compareAtPrice && (
+                  <p className="mt-2 text-lg text-slate-400">
+                    de <span className="line-through">R$ {landingConfig.compareAtPrice}</span>
+                  </p>
+                )}
+                <p className="mt-1 text-4xl font-extrabold tracking-tight text-white">
                   R$ {landingConfig.priceFormatted}
                 </p>
                 <p className="mt-1 text-sm font-semibold text-white">{landingConfig.priceLabel}</p>
+                <div className="mt-3">
+                  <OfferScarcityNote variant="dark" />
+                </div>
                 <div className="mt-4 h-px bg-white/15" />
                 <ul className="mt-4 space-y-2.5 text-sm font-medium text-slate-100">
                   <li className="flex items-center gap-2.5">

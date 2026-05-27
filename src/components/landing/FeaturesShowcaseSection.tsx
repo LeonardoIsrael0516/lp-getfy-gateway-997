@@ -78,12 +78,14 @@ const FeaturesShowcaseSection = () => {
         </div>
 
         <div className="mx-auto mt-8 flex max-w-lg flex-col items-center gap-4">
-          <Button asChild variant="hero" size="lg" className="w-full sm:w-auto px-8">
-            <a href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer">
-              <MessageCircle className="h-5 w-5" />
-              Solicitar demonstração
-            </a>
-          </Button>
+          {landingConfig.showDemoCta && (
+            <Button asChild variant="hero" size="lg" className="w-full sm:w-auto px-8">
+              <a href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer">
+                <MessageCircle className="h-5 w-5" />
+                Solicitar demonstração
+              </a>
+            </Button>
+          )}
 
           <p className="text-center text-xs text-muted-foreground">
             <a

@@ -18,13 +18,17 @@ export const landingConfig = {
   price: 997,
   priceFormatted: "997,00",
   priceLabel: "Pagamento único",
-  compareAtPrice: null as string | null,
+  compareAtPrice: "3.000,00",
+  scarcityLabel: "Poucas vagas neste lote",
+  scarcityHint: "Implementação profissional com vagas limitadas por mês.",
 
   /** null = sem pixel; string = ID do Meta Pixel */
   metaPixelId: "924183217200637" as string | null,
 
   /** Vídeo de apresentação (YouTube) */
   youtubeVideoId: "IKdOMhEr8VQ",
+  /** CTA WhatsApp "Solicitar demonstração" na seção de vídeo */
+  showDemoCta: false,
 
   whatsappNumber: "5591985134037",
   whatsappDemoMessage: "Olá! Gostaria de solicitar uma demonstração do Getfy Gateway.",

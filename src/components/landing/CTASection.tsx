@@ -1,6 +1,7 @@
 import { ArrowRight, BadgeCheck, Headphones, LockKeyhole, ShieldCheck, Wrench } from "lucide-react";
 import plataformaImage from "@/assets/plataforma.png";
 import BrandLogo from "@/components/landing/BrandLogo";
+import OfferScarcityNote from "@/components/landing/OfferScarcityNote";
 import PurchaseCtaButton from "@/components/landing/PurchaseCtaButton";
 import { landingConfig } from "@/config/landing";
 
@@ -47,13 +48,20 @@ const CTASection = ({ showIntro = true }: CTASectionProps) => {
 
               {landingConfig.compareAtPrice && (
                 <p className="text-2xl text-slate-700 mb-1">
-                  de <span className="line-through">{landingConfig.compareAtPrice}</span> por:
+                  de <span className="line-through">R$ {landingConfig.compareAtPrice}</span> por:
                 </p>
               )}
               <p className="text-5xl md:text-6xl font-extrabold tracking-tight gradient-text mb-2">
                 R$ {landingConfig.priceFormatted}
               </p>
-              <p className="text-sm font-semibold text-slate-700 mb-4">{landingConfig.priceLabel}</p>
+              <p className="mb-3 text-sm font-semibold text-slate-700">{landingConfig.priceLabel}</p>
+
+              <div className="mb-4 flex flex-col items-center gap-1">
+                <OfferScarcityNote />
+                {landingConfig.scarcityHint && (
+                  <span className="text-center text-[11px] text-slate-500">{landingConfig.scarcityHint}</span>
+                )}
+              </div>
 
               <ul className="mb-6 space-y-2 text-left text-sm text-slate-600 max-w-[280px] mx-auto">
                 <li className="flex items-center gap-2">
