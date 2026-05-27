@@ -8,6 +8,7 @@ import ModulesSection from "@/components/landing/ModulesSection";
 import GatewaysSection from "@/components/landing/GatewaysSection";
 import IntegrationsSection from "@/components/landing/IntegrationsSection";
 import ApiSection from "@/components/landing/ApiSection";
+import StackSecuritySection from "@/components/landing/StackSecuritySection";
 import AchievementSystemSection from "@/components/landing/AchievementSystemSection";
 import DecisionSection from "@/components/landing/DecisionSection";
 import FAQSection from "@/components/landing/FAQSection";
@@ -44,6 +45,8 @@ const Index = () => {
       <IntegrationsSection />
       <div className="line-gradient" />
       <ApiSection />
+      <div className="line-gradient" />
+      <StackSecuritySection />
       <AchievementSystemSection />
       <DecisionSection />
       <CTASection showIntro={false} />
